@@ -1,0 +1,42 @@
+<!-- Let's output the three variables passed to this template -->
+
+<div class="flex justify-center dark-off">
+  <form action="" method="post" class="rounded-md flex bg-white w-[327px] h-20 items-center justify-between relative bottom-10  md:w-[690px] dark:bg-veryDarkBlue">
+    <div class="flex items-center pl-6 md:border-r border-[rgba(99, 128, 152, 0.2)] dark:border-darkGrey h-full md:mr-6">
+      <img class="hidden md:block w-5 h-5 mr-4 " src="{{ base_path ~ directory }}/images/searchBlue.svg"/>
+      <input type="text" placeholder="Filter by title..." name="title" class="max-w-[195px] dark:bg-veryDarkBlue">
+    </div>
+    <div class="hidden md:flex items-center border-r border-[rgba(99, 128, 152, 0.2)] dark:border-darkGrey h-full w-[189px]">
+      <img class="hidden md:block w-5 h-5 mr-4" src="{{ base_path ~ directory }}/images/locationBlue.svg"/>
+      <input type="text" placeholder="Filter by location..." name="location" class="hidden md:block max-w-[152px] dark:bg-veryDarkBlue">
+    </div>
+    <div class="">
+      <input type="checkbox" name="checkbox" class="hidden md:block w-6 h-6 ">
+      <span class=""></span>
+    </div>
+    <label class="hidden md:inline text-veryDarkBlue dark:text-white"><strong>Full Time</strong></label>
+    <img class="w-5 h-5 mr-6 md:hidden" src="{{ base_path ~ directory }}/images/filter.svg"/>
+    <button type="submit" class="bg-violet text-white w-12 h-12 mr-4 rounded-md md:w-20">
+      <h4 class="hidden md:inline">Search</h4>
+      <img class="w-5 h-5 mx-auto md:hidden" src="{{ base_path ~ directory }}/images/search.svg"/>
+    </button>
+  </form>
+</div>
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 dark-off">
+  {% for item in jobs %}
+  
+    <ul class="bg-white dark:bg-veryDarkBlue mt-[50px] pl-8 pr-6 w-[327px] min-h-[228px] rounded-md box-border mx-auto md: w-[339] xl: w-[350]">
+       <li class="relative bottom-6"><img src={{ item.company_logo }}/></li>
+       <div class="text-darkGrey flex mb-4 text-sm">
+        <li class="">{{ item.field_current_date }} </li>
+        <p>&nbsp; . &nbsp;</p>
+        <li>{{ item.field_job_type }}</li> 
+       </div>
+       <li class="dark:text-white font-bold my-4 text-xl break-words"><a href="/node/{{ item.nid }}">{{ item.field_job_name }}</a>  </li>
+       <li class="text-darkGrey mt-4 mb-11 text-sm">{{ item.field_company_name }}</li>
+       <li class="text-violet font-bold text-xs pb-9">{{ item.field_country }} </li>
+    </ul> 
+  {% endfor %}    
+  </div>
+
+

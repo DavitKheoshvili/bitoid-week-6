@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Theme override of an image.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the img tag.
+ * - style_name: (optional) The name of the image style applied.
+ *
+ * @see template_preprocess_image()
+ */
+#}
+{%
+set classes = [
+  style_name ? 'image-style-' ~ style_name|clean_class,
+]
+%}
+<img class="relative bottom-[25px] w-12 h-12 md:bg-[#E99210] md:bottom-0 md:w-[140px] md:h-[140px] md:mr-5" {{ attributes.addClass(classes) }} />

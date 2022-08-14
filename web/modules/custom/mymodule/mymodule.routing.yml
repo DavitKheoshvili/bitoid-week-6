@@ -1,0 +1,7 @@
+mymodule.content:
+  path: '/job_list'
+  defaults:
+    _controller: '\Drupal\mymodule\Controller\MyMainController::content'
+    _title: 'My first page in D8'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,23 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+button{
+    width: 123px;
+    height: 48px;
+    background-color: #5964E0;
+    border: 0;
+    color: white;
+    border-radius: 5px;
+}
+
+h1 {
+    font-weight: 700;
+}
+h3 {
+    color: darkGray;
+}
